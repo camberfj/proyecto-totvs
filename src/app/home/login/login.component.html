@@ -1,0 +1,14 @@
+<h4 class="po-text-center po-md-6">Login</h4>
+
+<form (ngSubmit)="login()">
+  <div class="po-row">
+    <po-login class="po-lg-6 po-md-12" p-label="Usuario" p-placeholder="Usuario" [(ngModel)]="userName" name="userName"></po-login>
+  </div>
+  <div class="po-row">
+    <po-password class="po-lg-6 po-md-12" p-label="Contraseña" p-placeholder="password" [(ngModel)]="password" name="password"></po-password>
+  </div>
+  <div class="po-row">
+    <po-button class="po-md-6" p-label="Acceder">Acceder</po-button>
+  </div>
+</form>
+

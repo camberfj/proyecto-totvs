@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { PoModule } from '@po-ui/ng-components';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
-import { HomeModule } from './home/home.module';
+
 
 @NgModule({
   declarations: [
@@ -18,7 +18,6 @@ import { HomeModule } from './home/home.module';
     PoModule,
     HttpClientModule,
     RouterModule.forRoot([]),
-    HomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
