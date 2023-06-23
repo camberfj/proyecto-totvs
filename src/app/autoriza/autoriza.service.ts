@@ -13,6 +13,6 @@ export class AutorizaService {
     return this.httpClient.post('http://localhost:3000/user/login',{
       userName,
       password,
-    })
+    });
   }
 }
