@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AutorizaService } from 'src/app/autoriza/autoriza.service';
 
 @Component({
@@ -10,7 +11,7 @@ export class LoginComponent implements OnInit {
   userName = '';
   password = '';
 
-  constructor(private autorizaService: AutorizaService) {}
+  constructor(private autorizaService: AutorizaService, private router: Router) {}
 
   ngOnInit(): void {}
 
@@ -19,7 +20,7 @@ export class LoginComponent implements OnInit {
     console.log(this.userName, this.password);
     this.autorizaService.autorizar(this.userName, this.password).subscribe(
       {
-        complete: () => console.log('autorizado'),
+        complete: () => this.router.navigate(['clientes']),
         error: (err) => alert('Verifica tus datos'),
       }
     );
