@@ -7,11 +7,12 @@ import { PoModule } from '@po-ui/ng-components';
 import { AppComponent } from '../app.component';
 import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
+import { MessageModule } from '../components/message/message.module';
 
 
 @NgModule({
   declarations: [HomeComponent, LoginComponent],
-  imports: [CommonModule, HomeRoutingModule, PoModule, FormsModule],
+  imports: [CommonModule, HomeRoutingModule, PoModule, FormsModule, MessageModule],
   exports: [HomeComponent],
 })
 export class HomeModule { }
