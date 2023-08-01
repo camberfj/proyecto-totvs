@@ -20,10 +20,13 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { MatDialogModule } from '@angular/material/dialog';
 
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
     SearchComponent
+
   ],
   imports: [
     BrowserModule,
@@ -40,6 +43,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatProgressSpinnerModule,
     MatExpansionModule,
     MatDialogModule,
+
     RouterModule.forRoot([]),
     BrowserAnimationsModule,
   ],
