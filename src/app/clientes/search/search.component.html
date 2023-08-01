@@ -1,32 +1,19 @@
-<div class="containerSearch">
-	<input
-		type="text"
-		class="inputSearch"
-		placeholder="Search"
-		name="search"
-		[(ngModel)]="search"
-        [matAutocomplete]="auto"
-        (keyup)="_search($event.keyCode)"
-        id="inputSearch"
-    >
-    <div class="containerSearchIcon">
-		<mat-spinner diameter="20" color="accent" *ngIf="loading"></mat-spinner>
-    	<mat-icon style="margin-left: 15px;"> search</mat-icon>
-    </div>
-	<mat-autocomplete #auto="matAutocomplete">
-		<!--<mat-option
-			*ngFor="let result of results; let i=index"
-			[value]="result.title"
-			(click)="selectResult(i)"
-			(onSelectionChange)="selectResult(i)">
-		  {{result.title}}
-		</mat-option>-->
-	</mat-autocomplete>
-</div>
-<p>search works!</p>
+<po-input
 
+    p-clean="boolean"
+    p-disabled="boolean"
 
+    p-error-pattern="string"
+    p-help="string"
+    p-icon="string | TemplateRef<void>"
+    p-label="string"
+    p-mask="string"
+    p-mask-format-model="boolean"
 
-<!--<app-curve></app-curve>
-<app-cards [cards]="resultsToCards"></app-cards>-->
+    name="string"
 
+    p-pattern="string"
+    p-placeholder="Buscar"
+    p-readonly="boolean"
+    p-required="boolean">
+  </po-input>

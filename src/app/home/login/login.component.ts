@@ -8,8 +8,8 @@ import { AutorizaService } from 'src/app/autoriza/autoriza.service';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  userName: string;
-  password: string;
+  userName: string='';
+  password: string='';
 
   constructor(private autorizaService: AutorizaService, private router: Router) {}
 

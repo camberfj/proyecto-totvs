@@ -2,15 +2,21 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { ClientesRoutingModule } from './clientes-routing.module';
-import { ListaClientesComponent } from './lista-clientes/lista-clientes.component';
+import { SearchComponent } from './search/search.component';
+import { PoModule } from '@po-ui/ng-components';
+
+
 
 
 @NgModule({
   declarations: [
-    ListaClientesComponent,
+    SearchComponent
   ],
   imports: [
     CommonModule,
+    PoModule,
+    ClientesRoutingModule
+
   ],
 })
 export class ClientesModule { }
