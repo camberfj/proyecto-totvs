@@ -10,7 +10,7 @@ import { PoModule } from '@po-ui/ng-components';
 
 @NgModule({
   declarations: [
-    SearchComponent
+    SearchComponent,
   ],
   imports: [
     CommonModule,
