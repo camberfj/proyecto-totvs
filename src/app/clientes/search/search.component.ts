@@ -13,6 +13,7 @@ export class SearchComponent implements OnInit  {
   search:string;
   interval:any;
   loading:boolean=false;
+  myControl:string;
 
   constructor() {}
 
