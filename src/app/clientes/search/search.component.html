@@ -1,14 +1,11 @@
-<po-input  class="po-lg-4 po-md-10"
-  p-clean="boolean"
-  p-disabled="boolean"
-  p-error-pattern="string"
-  p-icon="string | TemplateRef<void>"
-  p-mask-format-model="boolean"
-  p-placeholder="Buscar"
-  p-readonly="boolean"
-  p-required="boolean">
-</po-input>
-
-
-
-
+<form class="example-form">
+  <mat-form-field class="example-full-width">
+    <mat-label>Buscar cliente</mat-label>
+    <input type="text" matInput [formControl]="myControl" [matAutocomplete]="auto">
+    <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+      <mat-option *ngFor="let search of searchOptions | async" [value]="search">
+        {{search.name}}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+</form>
