@@ -10,9 +10,9 @@ import { SearchComponent } from '../search/search.component';
   templateUrl: './lista-clientes.component.html',
   styleUrls: ['./lista-clientes.component.scss'],
   standalone: true,
-  imports: [MatCardModule, SearchComponent],
+  imports: [MatCardModule,],
 })
 export class ListaClientesComponent {
-  longText = `Amerian Buenos Aires Park`;
+  longText = `Info Cliente:`;
 }
 
