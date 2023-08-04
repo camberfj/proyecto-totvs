@@ -1,16 +1,28 @@
-<form class="example-form">
-  <mat-form-field class="example-full-width">
-    <div>
-    <mat-label>Buscar cliente</mat-label>
-    <div>
-    <input type="search" matInput [formControl]="myControl" [matAutocomplete]="auto">
-  </div>
-  <div class="containerButton"><button>Search</button></div>
-    <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
-      <mat-option *ngFor="let search of searchOptions | async" [value]="search">
-        {{search.name}}
+
+
+    <div class="containerBuscar">
+    <input
+    class="inputBuscar"
+    type="text"
+    placeholder="Buscar Cliente"
+    name="search"
+    [(ngModel)]="search"
+    matInput [formControl]="searchControl"
+    [matAutocomplete]="auto"
+    >
+    <div class="buscarIcon">
+      <mat-spinner diameter="20" color="accent" *ngIf="loading"></mat-spinner>
+        <mat-icon style="margin-left: 15px;"> search</mat-icon>
+      </div>
+    <mat-autocomplete #auto="matAutocomplete">
+      <mat-option
+      *ngFor="let option of searchOptions
+      | async"
+      [value]="option">
+      {{option.name}}
       </mat-option>
     </mat-autocomplete>
   </div>
-  </mat-form-field>
-</form>
+
+
+

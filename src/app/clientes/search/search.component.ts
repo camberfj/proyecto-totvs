@@ -7,10 +7,15 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { ClientesModule } from '../clientes.module';
+import { ResultadoService } from 'src/app/services/resultado.service';
+import { Info } from 'src/app/datos/info';
+import { MatIconModule } from '@angular/material/icon';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 export interface User {
   name: string;
 }
+
 
 /**
  * @title Display value autocomplete
@@ -28,15 +33,21 @@ export interface User {
     ReactiveFormsModule,
     NgFor,
     AsyncPipe,
+    MatIconModule,
+    MatProgressSpinnerModule
   ],
 })
 export class SearchComponent implements OnInit {
-  myControl = new FormControl<string | User>('');
-  options: User[] = [{name: 'Mary'}, {name: 'Shelley'}, {name: 'Igor'}];
+  searchControl = new FormControl<string | User>('');
+  options: User[] = [{name:'Amerian Buenos Aires Park'}];
   searchOptions: Observable<User[]>;
+  search: string;
+  resultado: Info [] = [];
+
+  constructor(private resultadoService: ResultadoService) {}
 
   ngOnInit() {
-    this.searchOptions = this.myControl.valueChanges.pipe(
+    this.searchOptions = this.searchControl.valueChanges.pipe(
       startWith(''),
       map(value => {
         const name = typeof value === 'string' ? value : value?.name;
