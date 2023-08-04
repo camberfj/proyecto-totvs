@@ -1,11 +1,16 @@
 <form class="example-form">
   <mat-form-field class="example-full-width">
+    <div>
     <mat-label>Buscar cliente</mat-label>
-    <input type="text" matInput [formControl]="myControl" [matAutocomplete]="auto">
+    <div>
+    <input type="search" matInput [formControl]="myControl" [matAutocomplete]="auto">
+  </div>
+  <div class="containerButton"><button>Search</button></div>
     <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
       <mat-option *ngFor="let search of searchOptions | async" [value]="search">
         {{search.name}}
       </mat-option>
     </mat-autocomplete>
+  </div>
   </mat-form-field>
 </form>
