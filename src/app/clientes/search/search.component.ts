@@ -21,7 +21,7 @@ export interface User {
  * @title Display value autocomplete
  */
 @Component({
-  selector: 'autocomplete-display-example',
+  selector: 'app-search',
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.scss'],
   standalone: true,
