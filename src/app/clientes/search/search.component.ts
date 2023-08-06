@@ -7,19 +7,21 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { ClientesModule } from '../clientes.module';
-import { ResultadoService } from 'src/app/services/resultado.service';
 import { Info } from 'src/app/datos/info';
 import { MatIconModule } from '@angular/material/icon';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { ListaClientesComponent } from '../lista-clientes/lista-clientes.component';
 import { SearchService } from './search.service';
-import { ListaclientesService } from '../lista-clientes/listaclientes.service';
+import { ListaClientesService } from '../lista-clientes/listaclientes.service';
+
 
 export interface User {
   name: string;
   title?: string;
 
 }
+
+
 
 
 /**
@@ -41,6 +43,8 @@ export interface User {
     MatIconModule,
     MatProgressSpinnerModule,
     ListaClientesComponent,
+
+
   ],
 })
 export class SearchComponent implements OnInit {
@@ -50,22 +54,19 @@ export class SearchComponent implements OnInit {
   searchControl = new FormControl<string | User>('');
   resultados: Observable<User[]>;
   search: string;
-  resultado: Info [] = [];
-  interval:any;
+  listaClientes: any [] = [];
 
 
 
-  constructor(private resultadoService: ResultadoService, searchService: SearchService, listaClientesService: ListaclientesService ) {
-    this.searchService = searchService;
+  constructor(private listaClientesService: ListaClientesService ) {
     this.buscarClientes = () => {
-      // Lógica para buscar clientes
       console.log("Buscando clientes...")
     };
   }
 
-  obtenerClientes(){
-    const clientes = this.listaClientesService.obtenerClientes();
-    console.log(clientes);
+  obtenerInformacionCompartida(){
+    const Clientes = this.listaClientesService.obtenerClientes();
+    console.log(Clientes);
   }
 
   listaClientesComponent(){

@@ -6,7 +6,6 @@
     name="search"
     [(ngModel)]="search"
     matInput [formControl]="searchControl"
-    [matAutocomplete]="auto"
     >
     <div class="buscarIcon">
       <button mat-icon-button matTooltip="Black" color="black" aria-label="Example icon-button with a heart icon" (click)="buscarClientes()">
@@ -16,7 +15,7 @@
     <mat-autocomplete #auto="matAutocomplete">
     </mat-autocomplete>
 </div>
-<app-search [clientes]="listaClientes"></app-search>
+
 
 
 

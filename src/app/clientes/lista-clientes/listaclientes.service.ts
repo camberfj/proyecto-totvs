@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
-export class ListaclientesService {
+export class ListaClientesService {
   private listaClientes: any[] = [];
 
   agregarClientes(clientes: any[]) {

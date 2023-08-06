@@ -1,13 +1,13 @@
 import {Component, OnInit} from '@angular/core';
 import {MatCardModule} from '@angular/material/card';
 import { SearchComponent } from '../search/search.component';
-import { ListaclientesService } from './listaclientes.service';
+import { ListaClientesService } from './listaclientes.service';
 
 /**
  * @title Card with media size
  */
 @Component({
-  selector: 'card-media-size-example',
+  selector: 'app-lista-clientes',
   templateUrl: './lista-clientes.component.html',
   styleUrls: ['./lista-clientes.component.scss'],
   standalone: true,
@@ -16,7 +16,8 @@ import { ListaclientesService } from './listaclientes.service';
 export class ListaClientesComponent implements OnInit {
   listaClientes: any[] = [];
 
-  constructor(private listaClientesService: ListaclientesService){}
+
+  constructor(private listaClientesService: ListaClientesService){}
   longText = `Info Cliente:`;
 
   obtenerInformacion() {
