@@ -1,3 +1,5 @@
+import { HttpClient } from '@angular/common/http';
+import { Info } from './../datos/info';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -5,5 +7,9 @@ import { Injectable } from '@angular/core';
 })
 export class ResultadoService {
 
-  constructor() { }
+  constructor( private http: HttpClient) { }
+
+  getInfo() {
+    return this.http.get<Info[]>('https://jsonplaceholder.typicode.com/posts')
+  }
 }

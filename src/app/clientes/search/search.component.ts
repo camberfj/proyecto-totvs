@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {FormControl, FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {Observable} from 'rxjs';
 import {map, startWith} from 'rxjs/operators';
@@ -11,9 +11,14 @@ import { ResultadoService } from 'src/app/services/resultado.service';
 import { Info } from 'src/app/datos/info';
 import { MatIconModule } from '@angular/material/icon';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { ListaClientesComponent } from '../lista-clientes/lista-clientes.component';
+import { SearchService } from './search.service';
+import { ListaclientesService } from '../lista-clientes/listaclientes.service';
 
 export interface User {
   name: string;
+  title?: string;
+
 }
 
 
@@ -34,35 +39,47 @@ export interface User {
     NgFor,
     AsyncPipe,
     MatIconModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    ListaClientesComponent,
   ],
 })
 export class SearchComponent implements OnInit {
+  @Input() clientes: any[] = [];
+  private searchService: SearchService;
+  buscarClientes: () => void;
   searchControl = new FormControl<string | User>('');
-  options: User[] = [{name:'Amerian Buenos Aires Park'}];
-  searchOptions: Observable<User[]>;
+  resultados: Observable<User[]>;
   search: string;
   resultado: Info [] = [];
+  interval:any;
 
-  constructor(private resultadoService: ResultadoService) {}
+
+
+  constructor(private resultadoService: ResultadoService, searchService: SearchService, listaClientesService: ListaclientesService ) {
+    this.searchService = searchService;
+    this.buscarClientes = () => {
+      // Lógica para buscar clientes
+      console.log("Buscando clientes...")
+    };
+  }
+
+  obtenerClientes(){
+    const clientes = this.listaClientesService.obtenerClientes();
+    console.log(clientes);
+  }
+
+  listaClientesComponent(){
+    this.searchService.buscarClientes();
+  }
+
+
 
   ngOnInit() {
-    this.searchOptions = this.searchControl.valueChanges.pipe(
-      startWith(''),
-      map(value => {
-        const name = typeof value === 'string' ? value : value?.name;
-        return name ? this._filter(name as string) : this.options.slice();
-      }),
-    );
   }
 
-  displayFn(user: User): string {
-    return user && user.name ? user.name : '';
-  }
 
-  private _filter(name: string): User[] {
-    const filterValue = name.toLowerCase();
 
-    return this.options.filter(option => option.name.toLowerCase().includes(filterValue));
-  }
+
+
+
 }
