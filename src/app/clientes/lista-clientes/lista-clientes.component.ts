@@ -15,7 +15,7 @@ import { ListaClientesService } from './listaclientes.service';
 })
 export class ListaClientesComponent implements OnInit {
   listaClientes: any[] = [];
-
+  search: any;
 
   constructor(private listaClientesService: ListaClientesService){}
   longText = `Info Cliente:`;
