@@ -5,7 +5,6 @@
     placeholder="Buscar Cliente"
     name="search"
     [(ngModel)]="search"
-    matInput [formControl]="searchControl"
     >
     <div class="buscarIcon">
       <button
@@ -16,8 +15,15 @@
       </button>
       </div>
     <mat-autocomplete #auto="matAutocomplete">
+      <mat-option
+      *ngFor="let resultado of resultados">
+      [value]="resultado.nombre"
+      {{ resultado.nombre }}
+      >
+    </mat-option>
     </mat-autocomplete>
 </div>
+
 
 
 

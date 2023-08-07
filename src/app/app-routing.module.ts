@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { SearchComponent } from './clientes/search/search.component';
 
 const routes: Routes = [
   {
@@ -14,7 +15,7 @@ const routes: Routes = [
   {
     path: 'clientes',
     loadChildren: () => import('./clientes/clientes.module').then((module) => module.ClientesModule ),
-  }
+  },
 ];
 
 @NgModule({

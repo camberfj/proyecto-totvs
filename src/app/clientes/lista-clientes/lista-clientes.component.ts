@@ -1,7 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {MatCardModule} from '@angular/material/card';
 import { SearchComponent } from '../search/search.component';
-import { ListaClientesService } from './listaclientes.service';
+import { ClientesService } from '../clientes.service';
+
 
 /**
  * @title Card with media size
@@ -11,19 +12,18 @@ import { ListaClientesService } from './listaclientes.service';
   templateUrl: './lista-clientes.component.html',
   styleUrls: ['./lista-clientes.component.scss'],
   standalone: true,
-  imports: [MatCardModule, SearchComponent],
+  imports: [MatCardModule],
 })
 export class ListaClientesComponent implements OnInit {
-  listaClientes: any[] = [];
+  clientes: any[] = [];
   search: any;
 
-  constructor(private listaClientesService: ListaClientesService){}
+  constructor(private clientesService: ClientesService){
+    this.clientes = [{nombre:'Amerian Buenos Aires Park'}];
+
+  }
   longText = `Info Cliente:`;
 
-  obtenerInformacion() {
-    const clientes = [{ nombre: 'Amerian Buenos Aires Park'}];
-    this.listaClientesService.agregarClientes(clientes);
-  }
 
 
 
