@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 import {FormControl, FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {Observable} from 'rxjs';
 import {NgFor, AsyncPipe} from '@angular/common';
@@ -11,18 +11,8 @@ import { ListaClientesComponent } from '../lista-clientes/lista-clientes.compone
 import { ClientesService } from '../clientes.service';
 
 
-export interface User {
-  name: string;
-  title?: string;
-
-}
 
 
-
-
-/**
- * @title Display value autocomplete
- */
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
@@ -36,10 +26,8 @@ export interface User {
     NgFor,
     MatIconModule,
     MatProgressSpinnerModule,
-
-
-
-  ],
+    ListaClientesComponent,
+   ],
 })
 export class SearchComponent implements OnInit {
   @Input() clientes: any[] = [];
@@ -47,16 +35,24 @@ export class SearchComponent implements OnInit {
   search: string;
 
 
+  @Output() clientesEncontrado: EventEmitter<any[]> = new EventEmitter<any[]>();
+
 
   constructor(private clientesService: ClientesService) {
     this.buscarClientes = () => {
-      console.log("Buscando clientes...")
+      console.log("Buscando clientes")
     };
   }
 
 
   buscarClientes() {
-    this.resultados = this.clientesService.buscarClientes(this.search);
+    if (this.search.trim() !== '') {
+      const resultados = this.clientesService.buscarClientes(this.search);
+      this.clientesService.actualizarClientesEncontrados(resultados);
+    } else {
+      this.resultados = [];
+    }
+
   }
 
 
