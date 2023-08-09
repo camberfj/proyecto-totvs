@@ -11,9 +11,6 @@ import { ListaClientesComponent } from './clientes/lista-clientes/lista-clientes
 export class AppComponent {
   @ViewChild(ListaClientesComponent) listaClientesComponent!: ListaClientesComponent;
 
-  actualizarClientesEncontrados(resultados: any[]) {
-    this.listaClientesComponent.actualizarClientesEncontrados(resultados);
-  }
 
   readonly menus: Array<PoMenuItem> = [
     { label: 'Home', action: this.onClick.bind(this) }

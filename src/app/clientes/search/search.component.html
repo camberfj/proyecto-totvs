@@ -1,4 +1,5 @@
 <div class="containerBuscar">
+
     <input
     class="inputBuscar"
     type="text"
@@ -14,15 +15,8 @@
         <mat-icon>search</mat-icon>
       </button>
       </div>
-    <mat-autocomplete #auto="matAutocomplete">
-      <mat-option
-      *ngFor="let resultado of resultados">
-      [value]="resultado.nombre"
-      {{ resultado.nombre }}
-      >
-    </mat-option>
-    </mat-autocomplete>
 </div>
+<app-lista-clientes [lista]="resultados"></app-lista-clientes>
 
 
 

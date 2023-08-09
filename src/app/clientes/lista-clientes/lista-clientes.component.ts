@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {MatCardModule} from '@angular/material/card';
 import { SearchComponent } from '../search/search.component';
 import { ClientesService } from '../clientes.service';
@@ -13,28 +13,17 @@ import { CommonModule } from '@angular/common';
   imports: [MatCardModule, CommonModule, SearchComponent],
 })
 export class ListaClientesComponent implements OnInit {
-  clientes: any[] = [];
-  search: any;
-  clientesEncontrados: any[] = [];
+  @Input() lista: any [];
 
-  constructor(private clientesService: ClientesService){
-    this.clientes = [{nombre:'Amerian Buenos Aires Park'}];
-
-  }
+  constructor(private clientesService: ClientesService){}
   longText = `Info Cliente:`;
 
 
 
 
-  ngOnInit(): void {
-    this.clientesService.clientesEncontrados.subscribe(clientes => {
-      this.clientesEncontrados = clientes;
-    });
-  }
+  ngOnInit(): void {}
 
-  actualizarClientesEncontrados(resultados: any[]) {
-    this.clientesEncontrados = resultados;
-  }
+
 
 
 }
