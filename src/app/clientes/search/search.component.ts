@@ -30,14 +30,14 @@ import { ClientesService } from '../clientes.service';
 export class SearchComponent implements OnInit {
   @Input() clientes: any[] = [];
   resultados: any[] = [
-        {
-            title: 'titulo 1',
-            cuerpo: 'cuerpo 1',
-            detalles: 'dettalle 1',
-            fecha: '01/01/1010',
-            imagen: 'urldelaimagen'
-        },
-     ];
+    {
+   /* title: 'titulo 1',
+    cuerpo: 'cuerpo 1',
+    detalles: 'dettalle 1',
+    fecha: '01/01/1010',
+    imagen: 'urldelaimagen'*/
+    },
+    ];
   search: string;
 
 
