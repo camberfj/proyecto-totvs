@@ -7,7 +7,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { ListaClientesComponent } from '../lista-clientes/lista-clientes.component';
-import { ClientesService } from '../clientes.service';
+import { Post } from '../models/post';
+import { ResultsService } from 'src/app/services/results.service';
 
 
 
@@ -28,23 +29,12 @@ import { ClientesService } from '../clientes.service';
    ],
 })
 export class SearchComponent implements OnInit {
-  @Input() clientes: any[] = [];
-  resultados: any[] = [
-    {
-   /* title: 'titulo 1',
-    cuerpo: 'cuerpo 1',
-    detalles: 'dettalle 1',
-    fecha: '01/01/1010',
-    imagen: 'urldelaimagen'*/
-    },
-    ];
+  @Input() clientes: Post[] = [];
+  resultados: Post[] = [];
   search: string;
 
 
-  @Output() clientesEncontrado: EventEmitter<any[]> = new EventEmitter<any[]>();
-
-
-  constructor(private clientesService: ClientesService) {
+  constructor(private resultsService: ResultsService) {
     this.buscarClientes = () => {
       console.log("Buscando clientes")
     };
@@ -53,21 +43,17 @@ export class SearchComponent implements OnInit {
 
   buscarClientes() {
     if (this.search.trim() !== '') {
-      const resultados = this.clientesService.buscarClientes(this.search);
-      this.clientesService.actualizarClientesEncontrados(resultados);
+      this.resultsService.buscarClientes(this.search).subscribe(resultados => {
+        this.resultados = resultados;
+      });
+      /*const resultados = this.clientesService.buscarClientes(this.search);*/
+
     } else {
       this.resultados = [];
     }
-
   }
 
-
-
   ngOnInit() {}
-
-
-
-
 
 
 }

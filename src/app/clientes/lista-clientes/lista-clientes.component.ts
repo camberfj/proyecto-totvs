@@ -1,8 +1,9 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {MatCardModule} from '@angular/material/card';
 import { SearchComponent } from '../search/search.component';
-import { ClientesService } from '../clientes.service';
 import { CommonModule } from '@angular/common';
+import { Post } from '../models/post';
+import { ResultsService } from 'src/app/services/results.service';
 
 
 @Component({
@@ -13,15 +14,18 @@ import { CommonModule } from '@angular/common';
   imports: [MatCardModule, CommonModule, SearchComponent],
 })
 export class ListaClientesComponent implements OnInit {
-  @Input() lista: any [];
+  @Input() lista: Post [];
+  clientes: Post []
 
-  constructor(private clientesService: ClientesService){}
+  constructor(private resultsService: ResultsService){}
   longText = `Info Cliente:`;
 
 
 
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    console.log(this.lista);
+  }
 
 
 

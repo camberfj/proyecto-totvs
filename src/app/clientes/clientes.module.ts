@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ClientesRoutingModule } from './clientes-routing.module';
 import { PoModule } from '@po-ui/ng-components';
+import { SearchComponent } from './search/search.component';
+import { ListaClientesComponent } from './lista-clientes/lista-clientes.component';
 
 
 
@@ -14,6 +16,7 @@ import { PoModule } from '@po-ui/ng-components';
     CommonModule,
     PoModule,
     ClientesRoutingModule,
+
 
 
   ],
