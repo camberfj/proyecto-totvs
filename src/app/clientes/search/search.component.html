@@ -1,22 +1,22 @@
 <div class="containerBuscar">
-
     <input
     class="inputBuscar"
     type="text"
     placeholder="Buscar Cliente"
     name="search"
-    [(ngModel)]="search"
+    [(ngModel)]="searchQuery"
     >
     <div class="buscarIcon">
       <button
       mat-icon-button matTooltip="Black"
       color="black" aria-label="Example icon-button with a heart icon"
-      (click)="buscarClientes()">
+      (click)="onSearch()">
         <mat-icon>search</mat-icon>
       </button>
       </div>
 </div>
-<app-lista-clientes [lista]="clientes"></app-lista-clientes>
+<app-lista-clientes [resultados]="filteredClientes"></app-lista-clientes>
+
 
 
 

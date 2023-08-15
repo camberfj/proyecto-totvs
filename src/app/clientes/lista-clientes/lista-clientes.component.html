@@ -1,14 +1,14 @@
-<div *ngFor="let cliente of lista">
-<mat-card class="example-card">
+<div>
+<mat-card class="example-card" *ngFor="let resultados of filteredClientes">
   <mat-card-header>
     <mat-card-title-group>
-      <mat-card-title>{{ cliente.name }}</mat-card-title>
-      <mat-card-subtitle>{{ cliente.title }}</mat-card-subtitle>
+      <mat-card-title>{{ resultados.name }}</mat-card-title>
+      <mat-card-subtitle>{{ resultados.title }}</mat-card-subtitle>
       <img mat-card-md-image src="assets/img/multimedia.png">
     </mat-card-title-group>
   </mat-card-header>
   <mat-card-content>
-    {{ cliente.cuerpo }}
+    {{ resultados.cuerpo }}
   </mat-card-content>
 </mat-card>
 </div>

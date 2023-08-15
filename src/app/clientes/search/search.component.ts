@@ -1,9 +1,9 @@
-import { Component, EventEmitter, Input, OnInit, Output, } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output, } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import {Observable} from 'rxjs';
-import {NgFor} from '@angular/common';
-import {MatInputModule} from '@angular/material/input';
-import {MatFormFieldModule} from '@angular/material/form-field';
+import { NgFor } from '@angular/common';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { ListaClientesComponent } from '../lista-clientes/lista-clientes.component';
@@ -29,29 +29,21 @@ import { ResultsService } from 'src/app/services/results.service';
    ],
 })
 export class SearchComponent implements OnInit {
-  @Input() clientes: Post[] = [];
-  resultados: Post[] = [];
-  search: string;
+  @Output() searchEvent = new EventEmitter<String>();
+  resultados: any[] = [];
+  searchQuery: string = '';
+  filteredClientes: Post[] = [];
 
 
-  constructor(private resultsService: ResultsService) {
-    this.buscarClientes = () => {
-      console.log("Buscando clientes")
-    };
-  }
+  constructor(private resultsService: ResultsService) {}
 
 
-  buscarClientes() {
-    if (this.search.trim() !== '') {
-      this.resultsService.buscarClientes(this.search).subscribe(resultados => {
-        this.resultados = resultados;
-      });
-      /*const resultados = this.clientesService.buscarClientes(this.search);*/
-
-    } else {
-      this.resultados = [];
+    onSearch() {
+      this.resultsService.getClientes(this.searchQuery).subscribe(data => {
+        this.searchEvent.emit(this.searchQuery);
+      })
     }
-  }
+
 
   ngOnInit() {}
 

@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { Post } from '../clientes/models/post';
 
 
@@ -8,13 +8,14 @@ import { Post } from '../clientes/models/post';
   providedIn: 'root'
 })
 export class ResultsService {
- clientes: any[]
- url: string = 'http://localhost:5000/resultados';
+  private apiUrl = 'http://localhost:5000/resultados';
+  private searchQuerySubject = new Subject<string>();
 
-  constructor(private HttpClient: HttpClient) {
-    this.clientes = []
-}
-buscarClientes(search: string): Observable<Post[]> {
-  return this.HttpClient.get<Post[]>(`${this.url}?name=${search}`)
+
+
+  constructor(private HttpClient: HttpClient) {}
+
+getClientes(searchQuery: string): Observable<Post[]> {
+  return this.HttpClient.get<Post[]>(`${this.apiUrl}?search=${searchQuery}`);
   }
 }

@@ -1,8 +1,8 @@
 export interface Post {
-  id?: string;
-  name: "Amerian Buenos Aires Park";
-  title: "Ambiente";
-  cuerpo: "Información sobre Amerian Buenos Aires Park";
+  id: number;
+  name: string;
+  title: string;
+  cuerpo: string;
   detalles: string;
   fecha?: string;
   imagen?: string;

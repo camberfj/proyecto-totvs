@@ -1,11 +1,11 @@
 {
-  "buscarClientes": [
+  "resultados": [
     {
-    "id": 1,
     "name": "Amerian Buenos Aires Park",
     "title": "Ambiente",
     "cuerpo": "Información sobre Amerian Buenos Aires Park",
     "detalles": "",
+    "search": "",
     "fecha": "",
     "imagen": ""
   }]
