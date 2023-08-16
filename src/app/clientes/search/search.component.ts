@@ -1,13 +1,11 @@
 import { Component, EventEmitter, OnInit, Output, } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import {Observable} from 'rxjs';
 import { NgFor } from '@angular/common';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { ListaClientesComponent } from '../lista-clientes/lista-clientes.component';
-import { Post } from '../models/post';
 import { ResultsService } from 'src/app/services/results.service';
 
 
@@ -32,7 +30,7 @@ export class SearchComponent implements OnInit {
   @Output() searchEvent = new EventEmitter<String>();
   resultados: any[] = [];
   searchQuery: string = '';
-  filteredClientes: Post[] = [];
+  filteredClientes= [];
 
 
   constructor(private resultsService: ResultsService) {}
@@ -40,7 +38,9 @@ export class SearchComponent implements OnInit {
 
     onSearch() {
       this.resultsService.getClientes(this.searchQuery).subscribe(data => {
-        this.searchEvent.emit(this.searchQuery);
+        /*this.filteredClientes=data;*/
+        console.log(data.results)
+        this.filteredClientes = data.results;
       })
     }
 

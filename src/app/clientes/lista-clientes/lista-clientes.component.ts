@@ -1,8 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {MatCardModule} from '@angular/material/card';
-import { SearchComponent } from '../search/search.component';
 import { CommonModule } from '@angular/common';
-import { Post } from '../models/post';
 import { ResultsService } from 'src/app/services/results.service';
 
 
@@ -14,8 +12,8 @@ import { ResultsService } from 'src/app/services/results.service';
   imports: [MatCardModule, CommonModule],
 })
 export class ListaClientesComponent implements OnInit {
-  @Input() resultados: Post[] = [];
-  filteredClientes: Post[] = [];
+  @Input() resultados: any[] = [];
+
 
   constructor(private resultsService: ResultsService){}
   longText = `Info Cliente:`;
@@ -24,24 +22,16 @@ export class ListaClientesComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.resultsService.getClientes('').subscribe(data => {
+   /* this.resultsService.getClientes('').subscribe(data => {
       this.resultados = data;
       this.filteredClientes = data;
 
       console.log(this.resultados);
-    })
+    })*/
 
   }
 
-  onSearch(query: string) {
-    if (query) {
-      this.filteredClientes = this.resultados.filter(cliente =>
-        cliente.name.toLowerCase().includes(query.toLowerCase())
-        );
-    } else {
-      this.filteredClientes = this.resultados;
-    }
-  }
+
 
 
 

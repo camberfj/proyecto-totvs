@@ -8,14 +8,14 @@ import { Post } from '../clientes/models/post';
   providedIn: 'root'
 })
 export class ResultsService {
-  private apiUrl = 'http://localhost:5000/resultados';
-  private searchQuerySubject = new Subject<string>();
+  private apiUrl = 'https://rickandmortyapi.com/api/character/';
+
 
 
 
   constructor(private HttpClient: HttpClient) {}
 
-getClientes(searchQuery: string): Observable<Post[]> {
-  return this.HttpClient.get<Post[]>(`${this.apiUrl}?search=${searchQuery}`);
+getClientes(searchQuery: string): Observable<any> {
+  return this.HttpClient.get<any>(`${this.apiUrl}?name=${searchQuery}`);
   }
 }
