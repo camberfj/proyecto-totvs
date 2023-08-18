@@ -3,12 +3,16 @@
   <mat-card-header>
     <mat-card-title-group>
       <mat-card-title>{{ resultado.name }}</mat-card-title>
-      <mat-card-subtitle>{{ resultado.title }}</mat-card-subtitle>
-      <img mat-card-md-image src="assets/img/multimedia.png">
+      <mat-card-subtitle>
+        <li>{{ resultado.species }}</li>
+        <li>{{ resultado.gender}}</li>
+        <li>{{ resultado.status }}</li>
+      </mat-card-subtitle>
+      <img mat-card-md-image [src]="resultado.image">
     </mat-card-title-group>
   </mat-card-header>
   <mat-card-content>
-    {{ resultado.cuerpo }}
+    <li>ID:{{ resultado.id }} {{ resultado.type }}</li>
   </mat-card-content>
 </mat-card>
 </div>
