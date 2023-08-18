@@ -1,20 +1,22 @@
-<div class="containerBuscar">
-    <input
-    class="inputBuscar"
-    type="text"
-    placeholder="Buscar Cliente"
-    name="search"
-    [(ngModel)]="searchQuery"
-    >
-    <div class="buscarIcon">
-      <button
-      mat-icon-button matTooltip="Black"
-      color="black" aria-label="Example icon-button with a heart icon"
-      (click)="onSearch()">
-        <mat-icon>search</mat-icon>
-      </button>
-      </div>
-</div>
+  <div class="background-image center-content-container">
+    <div class="containerBuscar">
+      <input
+        class="inputBuscar"
+        type="text"
+        placeholder="Buscar Cliente"
+        name="search"
+        [(ngModel)]="searchQuery"
+        >
+        <div class="buscarIcon">
+        <button
+        mat-icon-button matTooltip="Black"
+        color="black" aria-label="Example icon-button with a heart icon"
+        (click)="onSearch()">
+          <mat-icon>search</mat-icon>
+        </button>
+        </div>
+    </div>
+  </div>
 <app-lista-clientes [resultados]="filteredClientes"></app-lista-clientes>
 
 
