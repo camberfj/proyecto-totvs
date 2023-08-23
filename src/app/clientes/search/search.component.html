@@ -1,4 +1,5 @@
-  <div class="background-image center-content-container">
+  <div class="background">
+    <div class="center-content-container">
     <div class="containerBuscar">
       <input
         class="inputBuscar"
@@ -7,14 +8,15 @@
         name="search"
         [(ngModel)]="searchQuery"
         >
-        <div class="buscarIcon">
+        <div class="containerSearchIcon">
         <button
         mat-icon-button matTooltip="Black"
         color="black" aria-label="Example icon-button with a heart icon"
         (click)="onSearch()">
-          <mat-icon>search</mat-icon>
+        <mat-icon class="search-icon">search</mat-icon>
         </button>
         </div>
+      </div>
     </div>
   </div>
 <app-lista-clientes [resultados]="filteredClientes"></app-lista-clientes>
