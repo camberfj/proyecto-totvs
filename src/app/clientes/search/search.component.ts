@@ -7,6 +7,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { ListaClientesComponent } from '../lista-clientes/lista-clientes.component';
 import { ResultsService } from 'src/app/services/results.service';
+import { Dialog } from '@angular/cdk/dialog';
+import { DialogComponent } from '../dialog/dialog.component';
 
 
 
@@ -24,6 +26,7 @@ import { ResultsService } from 'src/app/services/results.service';
     MatIconModule,
     MatProgressSpinnerModule,
     ListaClientesComponent,
+    DialogComponent,
    ],
 })
 export class SearchComponent implements OnInit {
@@ -38,7 +41,6 @@ export class SearchComponent implements OnInit {
 
     onSearch() {
       this.resultsService.getClientes(this.searchQuery).subscribe(data => {
-        /*this.filteredClientes=data;*/
         console.log(data.results)
         this.filteredClientes = data.results;
       })
