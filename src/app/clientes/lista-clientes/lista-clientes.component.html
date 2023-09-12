@@ -1,20 +1,18 @@
 <div class="center-container">
-<mat-card class="example-card" *ngFor="let resultado of resultados">
-  <mat-card-header>
-    <mat-card-title-group>
-      <mat-card-title>{{ resultado.name }}</mat-card-title>
-      <mat-card-subtitle>
-        <li>{{ resultado.species }}</li>
-        <li>{{ resultado.gender}}</li>
-        <li>{{ resultado.status }}</li>
-      </mat-card-subtitle>
-      <img mat-card-md-image [src]="resultado.image">
-    </mat-card-title-group>
-  </mat-card-header>
-  <mat-card-content>
-    <li>ID:{{ resultado.id }} {{ resultado.type }}</li>
-  </mat-card-content>
-</mat-card>
-</div>
-
-
+  <mat-card class="example-card" *ngFor="let resultado of resultados">
+    <mat-card-header>
+      <mat-card-title-group>
+        <mat-card-title>{{ resultado.name }}</mat-card-title>
+        <mat-card-subtitle>
+          <li>{{ resultado.species }}</li>
+          <li>{{ resultado.gender }}</li>
+          <li>{{ resultado.status }}</li>
+        </mat-card-subtitle>
+        <img mat-card-md-image [src]="resultado.image">
+      </mat-card-title-group>
+    </mat-card-header>
+    <mat-card-content>
+      <li>ID:{{ resultado.id }} {{ resultado.type }}</li>
+    </mat-card-content>
+  </mat-card>
+  </div>

@@ -1,0 +1,33 @@
+<div class="w-100">
+	<div class="containerCards" *ngFor="let tarjeta of tarjetas" >
+		<mat-accordion class="w-100">
+		  <mat-expansion-panel
+          (opened)="panelOpenState = true"
+		      (closed)="panelOpenState = false">
+		    <mat-expansion-panel-header>
+		      <mat-panel-title style="width: 30%;">
+		      	<div class="containerTextCard"
+            [title]="tarjeta.title">
+		      	{{tarjeta.title}}
+		      	</div>
+		      </mat-panel-title>
+		      <mat-panel-description style=" width: 65%;">
+		      	<div class="containerTextCard">
+		      		{{tarjeta.body}}
+		      	</div>
+		      </mat-panel-description>
+		    </mat-expansion-panel-header>
+		    <div class="w-100 flex">
+		    <div class="w-70 center">
+		    	{{tarjeta.body}}
+		    </div>
+		    <div class="containerFullDescription">
+		    	<button mat-raised-button color="primary" (click)="openDialog()">Ver más</button>
+		    </div>
+		    </div>
+		  </mat-expansion-panel>
+		</mat-accordion>
+	</div>
+</div>
+<app-lista-clientes [resultados]="tarjetas"></app-lista-clientes>
+
