@@ -14,25 +14,25 @@ import { CommonModule } from '@angular/common';
   imports: [
     CommonModule,
     MatExpansionModule,
+    ListaClientesComponent,
   ]
 })
 export class DialogComponent implements OnInit {
-  @Output() dialogClosed = new EventEmitter<string>();
-  resultados: any[] = [];
+  /*@Output() dialogClosed = new EventEmitter<string>();*/
   searchQuery: string = '';
   filteredClientes: Info[] = [];
   panelOpenState = false;
-  @Input() cards?: Info[];
+  @Input() tarjetas: any[];
 
   constructor(private resultsService: ResultsService, private dialog: MatDialog) {}
 
   openDialog() {
-    this.resultsService.getClientes('').subscribe((data) => {
+    this.resultsService.getClientes(this.searchQuery).subscribe((data) => {
       console.log(data.results);
       this.filteredClientes = data.results;
       this.dialog.open(ListaClientesComponent, {
-        width: '400px',
-        data: { clientes: this.filteredClientes }, // Pasar datos al componente de diálogo si es necesario
+        width: '300px',
+        data: { clientes: this.filteredClientes },
       });
     });
   }

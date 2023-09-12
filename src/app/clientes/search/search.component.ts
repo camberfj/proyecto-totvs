@@ -1,13 +1,8 @@
 import { Component, EventEmitter, OnInit, Output, } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { NgFor } from '@angular/common';
-import { MatInputModule } from '@angular/material/input';
-import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
-import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-import { ListaClientesComponent } from '../lista-clientes/lista-clientes.component';
 import { ResultsService } from 'src/app/services/results.service';
-import { Dialog } from '@angular/cdk/dialog';
 import { DialogComponent } from '../dialog/dialog.component';
 
 
@@ -20,19 +15,17 @@ import { DialogComponent } from '../dialog/dialog.component';
   standalone: true,
   imports: [
     FormsModule,
-    MatFormFieldModule,
-    MatInputModule,
     NgFor,
     MatIconModule,
-    MatProgressSpinnerModule,
-    ListaClientesComponent,
+
+
     DialogComponent,
    ],
 })
 export class SearchComponent implements OnInit {
   @Output() searchEvent = new EventEmitter<String>();
   resultados: any[] = [];
-  searchQuery: string = '';
+  searchQuery: string;
   filteredClientes= [];
 
 
@@ -45,7 +38,6 @@ export class SearchComponent implements OnInit {
         this.filteredClientes = data.results;
       })
     }
-
 
   ngOnInit() {}
 
