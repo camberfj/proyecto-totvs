@@ -18,7 +18,16 @@ import { MatExpansionModule } from '@angular/material/expansion';
 
 @NgModule({
   declarations: [],
-  imports: [CommonModule, PoModule, ClientesRoutingModule, FormsModule, MatCardModule, MatButtonModule, MatDialogModule, MatExpansionModule],
+  imports: [
+    CommonModule,
+    PoModule,
+    ClientesRoutingModule,
+    FormsModule,
+    MatCardModule,
+    MatButtonModule,
+    MatDialogModule,
+    MatExpansionModule
+  ],
   exports: [],
   providers: [ResultsService],
   bootstrap: [AppComponent]

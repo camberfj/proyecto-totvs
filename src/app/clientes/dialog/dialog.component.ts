@@ -3,7 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { Info } from 'src/app/datos/info';
 import { ResultsService } from 'src/app/services/results.service';
-import { ListaClientesComponent } from '../lista-clientes/lista-clientes.component';
+
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -14,7 +14,7 @@ import { CommonModule } from '@angular/common';
   imports: [
     CommonModule,
     MatExpansionModule,
-    ListaClientesComponent,
+
   ]
 })
 export class DialogComponent implements OnInit {
@@ -27,15 +27,9 @@ export class DialogComponent implements OnInit {
   constructor(private resultsService: ResultsService, private dialog: MatDialog) {}
 
   openDialog() {
-    this.resultsService.getClientes(this.searchQuery).subscribe((data) => {
-      console.log(data.results);
-      this.filteredClientes = data.results;
-      this.dialog.open(ListaClientesComponent, {
-        width: '300px',
-        data: { clientes: this.filteredClientes },
-      });
-    });
+    console.log(this.tarjetas)
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+  }
 }

@@ -8,6 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { SearchComponent } from './clientes/search/search.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 
@@ -26,6 +27,7 @@ import { SearchComponent } from './clientes/search/search.component';
     PoModule,
     HttpClientModule,
     FormsModule,
+    BrowserAnimationsModule,
     RouterModule.forRoot([]),
   ],
   providers: [],
