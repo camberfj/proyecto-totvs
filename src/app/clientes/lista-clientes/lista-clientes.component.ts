@@ -1,7 +1,6 @@
 import {Component, Input, OnInit, ViewChild} from '@angular/core';
 import {MatCardModule} from '@angular/material/card';
 import { CommonModule } from '@angular/common';
-import { ResultsService } from 'src/app/services/results.service';
 
 @Component({
   selector: 'app-lista-clientes',
@@ -17,21 +16,13 @@ export class ListaClientesComponent implements OnInit {
   @Input() resultados: any[] = [];
 
 
-  constructor(private resultsService: ResultsService,){}
+  constructor(){}
   longText = `Info Cliente:`;
 
 
 
 
-  ngOnInit(): void {
-   /* this.resultsService.getClientes('').subscribe(data => {
-      this.resultados = data;
-      this.filteredClientes = data;
-
-      console.log(this.resultados);
-    })*/
-
-  }
+  ngOnInit(): void {}
 
 
 }

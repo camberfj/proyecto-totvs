@@ -3,21 +3,19 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ClientesRoutingModule } from './clientes-routing.module';
 import { PoModule } from '@po-ui/ng-components';
-import { SearchComponent } from './search/search.component';
-import { ListaClientesComponent } from './lista-clientes/lista-clientes.component';
 import { ResultsService } from '../services/results.service';
 import { FormsModule } from '@angular/forms';
 import { AppComponent } from '../app.component';
 import { MatCardModule } from '@angular/material/card';
-import { DialogComponent } from './dialog/dialog.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { ContainerDialogComponent } from './container-dialog/container-dialog.component';
 
 
 
 
 @NgModule({
-  declarations: [],
+  declarations: [ContainerDialogComponent],
   imports: [
     CommonModule,
     PoModule,

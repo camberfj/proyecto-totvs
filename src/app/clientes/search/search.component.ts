@@ -17,8 +17,6 @@ import { DialogComponent } from '../dialog/dialog.component';
     FormsModule,
     NgFor,
     MatIconModule,
-
-
     DialogComponent,
    ],
 })
