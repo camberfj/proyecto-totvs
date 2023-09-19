@@ -1,8 +1,25 @@
-<h1 mat-dialog-title align="center">Confirmar</h1>
-<mat-dialog-content class="mat-typography">
-  <p>Está seguro que desea continuar con la acción seleccionada?</p>
-</mat-dialog-content>
-<mat-dialog-actions align="end">
-  <button mat-button mat-dialog-close>Cancelar</button>
-  <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Aceptar</button>
-</mat-dialog-actions>
+<div class="center-container" *ngFor="let tarjeta of tarjetas">
+  <h1 mat-dialog-title>Confirmar</h1>
+  <div class="box-dialog" mat-dialog-content>
+    <p>¿Está seguro de que desea continuar con la acción seleccionada?</p>
+    <mat-dialog-content class="mat-typography">
+      <ul class="container-dialog">
+        <li>
+          Nombre: {{ tarjeta.name }}
+        </li>
+          <li>
+            Creado: {{ tarjeta.created }}
+          </li>
+          <li>
+            ID: {{ tarjeta.id }}
+          </li>
+      </ul>
+    </mat-dialog-content>
+    <img mat-card-md-image [src]="tarjeta.image" alt="Imagen de la tarjeta">
+  </div>
+  <mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Cancelar</button>
+    <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Aceptar</button>
+  </mat-dialog-actions>
+</div>
+

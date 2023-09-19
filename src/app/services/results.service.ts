@@ -19,7 +19,8 @@ getClientes(searchQuery: string): Observable<any> {
   return this.httpClient.get<any>(`${this.apiUrl}?name=${searchQuery}`);
   }
 
-  getPosts(): Observable<Info[]> {
-  	return this.httpClient.get<Info[]>('https://info');
+  getCharacterResults(openDialog: string): Observable<any> {
+    return this.httpClient.get<any>(`${this.apiUrl}?name=${openDialog}`);
   }
+
 }

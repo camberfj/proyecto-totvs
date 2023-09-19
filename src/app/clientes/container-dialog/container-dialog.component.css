@@ -1,1 +1,24 @@
+.center-container {
+  text-align: center;
+  padding: 20px;
+}
+
+.box-dialog {
+  background-color: #d6d4d4;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.container-dialog {
+  list-style: none;
+}
+
+li {
+  margin-bottom: 2px;
+}
+
+img {
+	width: 20%;
+}
+
 
