@@ -15,12 +15,12 @@
 		    </mat-expansion-panel-header>
 		    <div class="w-100 flex">
 		    <div class="w-70 center">
-		    	<li>{{tarjeta.gender}}</li>
+		    	<li>{{ tarjeta.gender }}</li>
           <li>{{ tarjeta.species }}</li>
           <li>{{ tarjeta.status }}</li>
 		    </div>
 		    <div class="containerFullDescription">
-		    	<button mat-raised-button color="primary" (click)="openDialog()">Ver más</button>
+		    	<button mat-raised-button color="primary" (click)="openDialog(tarjeta)">Ver más</button>
 		    </div>
 		    </div>
 		  </mat-expansion-panel>

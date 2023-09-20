@@ -32,7 +32,6 @@ export class SearchComponent implements OnInit {
 
     onSearch() {
       this.resultsService.getClientes(this.searchQuery).subscribe(data => {
-        console.log(data.results)
         this.filteredClientes = data.results;
       })
     }

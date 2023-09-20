@@ -20,10 +20,11 @@ export class DialogComponent implements OnInit {
 
   constructor(private dialog: MatDialog) {}
 
-  openDialog() {
+  openDialog(tarjeta:any) {
     const dialogRef = this.dialog.open(ContainerDialogComponent, {
+      data: tarjeta
     });
-    console.log(dialogRef);
+
 
   }
 

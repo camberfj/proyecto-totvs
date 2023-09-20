@@ -1,5 +1,6 @@
-import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
-import { ResultsService } from 'src/app/services/results.service';
+import { Component, OnInit, Output, EventEmitter, Input, Inject} from '@angular/core';
+import {MAT_DIALOG_DATA} from '@angular/material/dialog';
+
 
 @Component({
   selector: 'app-container-dialog',
@@ -10,14 +11,11 @@ export class ContainerDialogComponent implements OnInit {
   tarjetas: any[] = [];
   openDialog: string = '';
 
-  constructor(private resultsService: ResultsService) {}
+  constructor(@Inject(MAT_DIALOG_DATA) public data: {tarjeta: any}) {}
 
 
   ngOnInit(): void {
-    this.resultsService.getCharacterResults(this.openDialog).subscribe(data => {
-      console.log(data.results)
-      this.tarjetas = data.results;
-    })
+    console.log(this.data)
   }
 
 
