@@ -4,6 +4,7 @@ import { NgFor } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
 import { ResultsService } from 'src/app/services/results.service';
 import { DialogComponent } from '../dialog/dialog.component';
+import { CurvaComponent } from '../curva/curva.component';
 
 
 
@@ -18,6 +19,7 @@ import { DialogComponent } from '../dialog/dialog.component';
     NgFor,
     MatIconModule,
     DialogComponent,
+    CurvaComponent
    ],
 })
 export class SearchComponent implements OnInit {
