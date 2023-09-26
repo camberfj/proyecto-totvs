@@ -1,3 +1,4 @@
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatDialogModule } from '@angular/material/dialog';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -15,7 +16,7 @@ import { ContainerDialogComponent } from './container-dialog/container-dialog.co
 
 
 @NgModule({
-  declarations: [ContainerDialogComponent],
+  declarations: [ContainerDialogComponent,],
   imports: [
     CommonModule,
     PoModule,
@@ -24,7 +25,8 @@ import { ContainerDialogComponent } from './container-dialog/container-dialog.co
     MatCardModule,
     MatButtonModule,
     MatDialogModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatToolbarModule,
   ],
   exports: [],
   providers: [ResultsService],

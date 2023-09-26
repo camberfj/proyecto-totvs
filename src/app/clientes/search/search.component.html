@@ -1,4 +1,12 @@
-  <div class="background">
+<mat-toolbar class="color">
+  <a href="https://es.totvs.com/">
+    Totvs
+  </a>
+  <span class="spacer"></span>
+  <a href="https://es.totvs.com/contacto/">Contáctenos</a>
+  <mat-icon style="margin-left: 10px;">contact_support</mat-icon>
+</mat-toolbar>
+<div class="background">
     <div class="center-content-container">
     <div class="containerBuscar">
       <input
@@ -19,8 +27,9 @@
       </div>
     </div>
   </div>
-  <app-dialog [tarjetas]="filteredClientes"></app-dialog>
   <app-curva></app-curva>
+  <app-dialog [tarjetas]="filteredClientes"></app-dialog>
+
 
 
 

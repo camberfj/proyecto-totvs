@@ -5,6 +5,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { ResultsService } from 'src/app/services/results.service';
 import { DialogComponent } from '../dialog/dialog.component';
 import { CurvaComponent } from '../curva/curva.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 
 
@@ -19,7 +20,8 @@ import { CurvaComponent } from '../curva/curva.component';
     NgFor,
     MatIconModule,
     DialogComponent,
-    CurvaComponent
+    CurvaComponent,
+    MatToolbarModule
    ],
 })
 export class SearchComponent implements OnInit {
