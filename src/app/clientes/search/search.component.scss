@@ -1,9 +1,9 @@
 .background {
   width: 100%;
-  height: 100vh;
+  height: 100%;
   background: linear-gradient(to bottom, #3f51b5 50%, white 50%); /*Dos colores divididos en la mitad */
   justify-content: center;
-  align-items: center;
+  /*align-items: center;*/
   position: relative;
   clip-path: ellipse(100% 50% at 50% 0);
 }
@@ -12,30 +12,24 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
     height: 50%;
-    position: relative;
   }
 
 
 .containerBuscar {
 	width: 100%;
-  /*height: 100px;*/
 	background: #3f51b5;
 	display: flex;
-  /*flex-direction: column;*/
 	justify-content: center;
-  align-items: center;
   text-align: center;
 }
 
 
 .inputBuscar {
-	/*height: 40px;*/
-	width: 40%;
+	height: 38px;
+	width: 41%;
 	border-radius: 5px;
-	padding: 10px;
-
+	padding: 11px;
 }
 
 .containerSearchIcon {
@@ -48,7 +42,7 @@
 
 .search-icon {
   position: absolute;
-  font-size: 30px;
-  color: gray; /*Ajusta el color del ícono*/
+  font-size: 31px;
+  color: rgb(252, 0, 0); /*Ajusta el color del ícono*/
 }
 

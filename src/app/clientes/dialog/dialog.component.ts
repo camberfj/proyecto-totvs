@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { CommonModule } from '@angular/common';
@@ -20,14 +20,11 @@ export class DialogComponent implements OnInit {
 
   constructor(private dialog: MatDialog) {}
 
-  openDialog(tarjeta:any) {
+  openDialog(tarjeta: any) {
     const dialogRef = this.dialog.open(ContainerDialogComponent, {
-      data: tarjeta
+      data: { tarjeta },
     });
+}
 
-
-  }
-
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 }

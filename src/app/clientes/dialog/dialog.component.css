@@ -1,1 +1,42 @@
+.mat-accordion {
+  width: 70%; /* Ajusta el ancho del mat-accordion según tus necesidades */
+  margin-left: 2px; /* Espacio entre el input y el mat-accordion */
+}
 
+.containerTextCard {
+	white-space: nowrap;
+ 	text-overflow: ellipsis;
+ 	overflow: hidden;
+ 	width: 100%;
+}
+
+.containerTarjetas {
+	margin-left: 20%;
+	width: 70%;
+	margin-top: 20px;
+}
+
+.containerFullDescription {
+	width: 30%;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.w-100 {
+	width: 100%;
+
+}
+
+.w-70 {
+	width: 70%;
+}
+
+.center {
+	text-align: center;
+}
+
+.flex {
+	display: flex;
+}

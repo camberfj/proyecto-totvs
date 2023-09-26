@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter, Input, Inject} from '@angular/core';
+import { Component, OnInit, Inject} from '@angular/core';
 import {MAT_DIALOG_DATA} from '@angular/material/dialog';
 
 
@@ -8,13 +8,14 @@ import {MAT_DIALOG_DATA} from '@angular/material/dialog';
   styleUrls: ['./container-dialog.component.css']
 })
 export class ContainerDialogComponent implements OnInit {
-  tarjetas: any[] = [];
+  tarjeta: any[];
   openDialog: string = '';
 
   constructor(@Inject(MAT_DIALOG_DATA) public data: {tarjeta: any}) {}
 
 
   ngOnInit(): void {
+    this.tarjeta = this.data.tarjeta;
     console.log(this.data)
   }
 
